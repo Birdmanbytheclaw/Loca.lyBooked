@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Loca_ly.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200310123945_init")]
-    partial class init
+    [Migration("20200310154341_instumentAdded")]
+    partial class instumentAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,78 @@ namespace Loca_ly.Data.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Loca_ly.Models.Artist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("AverageRating")
+                        .HasColumnType("float");
+
+                    b.Property<string>("BandName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Genre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("GigAcceptedCurrently")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("IndividualName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instrument")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("MaxTravelDistance")
+                        .HasColumnType("float");
+
+                    b.Property<double>("MinPay")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Zipcode")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Artist");
+                });
+
+            modelBuilder.Entity("Loca_ly.Models.Venue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("AverageRating")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("CoverCharge")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("GenrePreference")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("GigTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MaxPay")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Venue");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -50,15 +122,15 @@ namespace Loca_ly.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "87ae4405-eb45-4e66-9441-779449d2aa44",
-                            ConcurrencyStamp = "ebf91222-ddad-4b10-8657-314f099cecf2",
+                            Id = "2802f12a-cc83-440a-b430-e0a7e02f4ac9",
+                            ConcurrencyStamp = "25d9f276-c7bb-41a7-be97-e1fb592ad1b7",
                             Name = "Venue",
                             NormalizedName = "VENUE"
                         },
                         new
                         {
-                            Id = "ff764c31-cef6-476f-83c2-c0b893f4a4b7",
-                            ConcurrencyStamp = "a4c1a42b-29f3-47bb-bf68-0010ad17ffbe",
+                            Id = "a93381b0-4912-43c0-8833-9bb69af80553",
+                            ConcurrencyStamp = "094a5e9d-050f-4cda-a572-e96066c0d2c0",
                             Name = "Artist",
                             NormalizedName = "ARTIST"
                         });

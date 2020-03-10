@@ -4,14 +4,16 @@ using Loca_ly.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Loca_ly.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200310145220_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,9 +41,6 @@ namespace Loca_ly.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("IndividualName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Instrument")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("MaxTravelDistance")
@@ -120,15 +119,15 @@ namespace Loca_ly.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2802f12a-cc83-440a-b430-e0a7e02f4ac9",
-                            ConcurrencyStamp = "25d9f276-c7bb-41a7-be97-e1fb592ad1b7",
+                            Id = "06a22d06-c406-4fe2-b458-c0cb783f40fd",
+                            ConcurrencyStamp = "cc4cf074-5452-42ea-b49e-c9f6eb8cec9f",
                             Name = "Venue",
                             NormalizedName = "VENUE"
                         },
                         new
                         {
-                            Id = "a93381b0-4912-43c0-8833-9bb69af80553",
-                            ConcurrencyStamp = "094a5e9d-050f-4cda-a572-e96066c0d2c0",
+                            Id = "59f6c924-ebdf-4bb5-99a6-e48e7c77a465",
+                            ConcurrencyStamp = "28002088-f8ea-42e6-b238-33bb1349e41b",
                             Name = "Artist",
                             NormalizedName = "ARTIST"
                         });
