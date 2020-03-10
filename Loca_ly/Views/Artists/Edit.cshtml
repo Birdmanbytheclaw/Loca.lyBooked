@@ -1,0 +1,69 @@
+﻿@model Loca_ly.Models.Artist
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Artist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="IndividualName" class="control-label"></label>
+                <input asp-for="IndividualName" class="form-control" />
+                <span asp-validation-for="IndividualName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BandName" class="control-label"></label>
+                <input asp-for="BandName" class="form-control" />
+                <span asp-validation-for="BandName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zipcode" class="control-label"></label>
+                <input asp-for="Zipcode" class="form-control" />
+                <span asp-validation-for="Zipcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinPay" class="control-label"></label>
+                <input asp-for="MinPay" class="form-control" />
+                <span asp-validation-for="MinPay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AverageRating" class="control-label"></label>
+                <input asp-for="AverageRating" class="form-control" />
+                <span asp-validation-for="AverageRating" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GigAcceptedCurrently" /> @Html.DisplayNameFor(model => model.GigAcceptedCurrently)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxTravelDistance" class="control-label"></label>
+                <input asp-for="MaxTravelDistance" class="form-control" />
+                <span asp-validation-for="MaxTravelDistance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
