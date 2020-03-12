@@ -31,7 +31,7 @@ namespace Loca_ly.Areas.Identity.Pages.Account
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -119,7 +119,8 @@ RoleManager<IdentityRole> roleManager)
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
+            var roles = _roleManager.Roles;
+            Roles = new SelectList(roles, "Name", "Name");
             // If we got this far, something failed, redisplay form
             return Page();
         }

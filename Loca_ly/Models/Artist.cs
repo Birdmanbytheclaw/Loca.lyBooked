@@ -15,9 +15,13 @@ namespace Loca_ly.Models
         public string Genre { get; set; }
         public int Zipcode { get; set; }
         public double MinPay { get; set; }
-        public double AverageRating { get; set; }
+        public double AverageVenueRating { get; set; }
+        public double AverageArtistRating { get; set; }
         public bool GigAcceptedCurrently { get; set; }
         public double MaxTravelDistance { get; set; }
+        public string VenueReviews { get; set; }
+        public string ArtistReviews { get; set; }
+        public string MainSongName { get; set; }
         
     }
 }

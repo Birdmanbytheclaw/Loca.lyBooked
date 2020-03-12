@@ -23,19 +23,14 @@ namespace Loca_ly.Data
             {
                 Name = "Venue",
                 NormalizedName = "VENUE"
-            }
-            );
-            
-                base.OnModelCreating(builder);
-                builder.Entity<IdentityRole>()
-                .HasData(
-                new IdentityRole
-                {
-                    Name = "Artist",
-                    NormalizedName = "ARTIST"
-                }
-                );
-            }
+            },
+            new IdentityRole
+            {
+                Name = "Artist",
+                NormalizedName = "ARTIST"
+            });
+     
+        }
         public DbSet<Loca_ly.Models.Artist> Artist { get; set; }
         public DbSet<Loca_ly.Models.Venue> Venue { get; set; }
     }

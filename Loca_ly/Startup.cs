@@ -33,7 +33,7 @@ namespace Loca_ly
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultUI()
-.AddDefaultTokenProviders();
+            .AddDefaultTokenProviders();
             services.AddControllersWithViews();
             services.AddRazorPages();
 

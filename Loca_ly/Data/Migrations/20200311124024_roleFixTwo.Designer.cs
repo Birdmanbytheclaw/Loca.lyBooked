@@ -4,14 +4,16 @@ using Loca_ly.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Loca_ly.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200311124024_roleFixTwo")]
+    partial class roleFixTwo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,13 +28,7 @@ namespace Loca_ly.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ArtistReviews")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("AverageArtistRating")
-                        .HasColumnType("float");
-
-                    b.Property<double>("AverageVenueRating")
+                    b.Property<double>("AverageRating")
                         .HasColumnType("float");
 
                     b.Property<string>("BandName")
@@ -50,17 +46,11 @@ namespace Loca_ly.Data.Migrations
                     b.Property<string>("Instrument")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MainSongName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<double>("MaxTravelDistance")
                         .HasColumnType("float");
 
                     b.Property<double>("MinPay")
                         .HasColumnType("float");
-
-                    b.Property<string>("VenueReviews")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Zipcode")
                         .HasColumnType("int");
@@ -80,10 +70,7 @@ namespace Loca_ly.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ArtistReviews")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("AverageArtistRating")
+                    b.Property<double>("AverageRating")
                         .HasColumnType("float");
 
                     b.Property<bool>("CoverCharge")
@@ -135,15 +122,15 @@ namespace Loca_ly.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "06124ee3-0073-4c22-9b6a-9c182c4619be",
-                            ConcurrencyStamp = "25edb690-80df-46af-ab77-d04a70433824",
+                            Id = "7a3dcbd6-d70c-43bb-814a-67a597ee413b",
+                            ConcurrencyStamp = "ab520374-0380-4b16-8935-f134807e799e",
                             Name = "Venue",
                             NormalizedName = "VENUE"
                         },
                         new
                         {
-                            Id = "cd319cad-7146-4701-8e13-8d0af90d417b",
-                            ConcurrencyStamp = "44c3911a-0a21-4dc1-8f76-98e834021a99",
+                            Id = "eadb0e37-b33a-4b63-93bf-4d42a6cc62e7",
+                            ConcurrencyStamp = "33706faf-448f-4623-8e10-4414314060a8",
                             Name = "Artist",
                             NormalizedName = "ARTIST"
                         });

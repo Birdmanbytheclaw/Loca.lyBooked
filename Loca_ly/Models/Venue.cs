@@ -16,7 +16,8 @@ namespace Loca_ly.Models
        public bool CoverCharge { get; set; }
        public int MaxPay { get; set; }
        public DateTime GigTime { get; set; }
-       public double AverageRating { get; set; }
+       public double AverageArtistRating { get; set; }
+       public string ArtistReviews { get; set; }
        
        
     }
