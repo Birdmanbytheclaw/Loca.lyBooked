@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Loca_ly</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -11,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Loca_ly</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/PIcs/Logo.png" width="235" height="150" alt="logo" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,6 +29,43 @@
                     </ul>
                 </div>
             </div>
+            <div class="text-center">
+                <h1 class="display-4">Welcome To Your New Band Manager!</h1>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#home">Solo Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#profile">Band</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Next Show</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" style="">
+                            <a class="dropdown-item" href="#">See What Artists Think</a>
+                            <a class="dropdown-item" href="#">See What Venues Think</a>
+                            <a class="dropdown-item" href="#">See More videos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade" id="You">
+                        <p>Here Will Be info about the individual</p>
+                    </div>
+                    <div class="tab-pane fade active show" id="Band">
+                        <p>Here Will be the info About the band</p>
+                    </div>
+                    <div class="tab-pane fade" id="Artist Rating">
+                        <p>Artist indivdual average rating given by other Artists</p>
+                    </div>
+                    <div class="tab-pane fade" id="Venue Rating">
+                        <p>Artist and band Ratings given by Venues</p>
+                    </div>
+                </div>
         </nav>
     </header>
     <div class="container">
